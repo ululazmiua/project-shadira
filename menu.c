@@ -52,7 +52,7 @@ static void bacaTanpaSpasi(const char *label, char *hasil, int ukuran)
     do
     {
         bacaTeksWajib(label, hasil, ukuran);
-        if (strchr(hasil, ' ') != NULL)
+        if (strchr(hasil, ' ') != NULL) // digunakan untuk mengecek apakah ada spasi
         {
             printf("Tidak boleh mengandung spasi.\n");
             hasil[0] = '\0';
@@ -69,7 +69,7 @@ static int bacaAngka(const char *label, int min, int max)
     while (1)
     {
         bacaBaris(label, teks, sizeof(teks));
-        nilai = strtol(teks, &akhir, 10);
+        nilai = strtol(teks, &akhir, 10); // mengubah string menjadi bilangan bulat bertipe long.
         if (teks[0] != '\0' && *akhir == '\0' && nilai >= min && nilai <= max)
         {
             return (int)nilai;
