@@ -143,7 +143,7 @@ static int muatBuku(void)
     char tahun[32], halaman[32], stok[32];
 
     int pos; // menyimpan posisi karakter yang sedang dibaca
-    Buku b; // untuk menampung satu data buku sementara
+    Buku b;  // untuk menampung data buku sementara
 
     if (f == NULL)
     {
@@ -246,7 +246,7 @@ static int muatUser(void)
     }
 
     fclose(f);
-    return 1;
+    return 1; // menandakan berhasil
 }
 
 // Membaca data peminjaman dari file
@@ -376,10 +376,12 @@ void simpanPinjam(void)
 // Membebaskan semua memori yang digunakan
 void bebaskanSemuaData(void)
 {
+    // realloc() untuk menambah kapasitas penyimpanan data buku. Ketika data tersebut sudah tidak diperlukan, memorinya bisa dibebaskan menggunakan free().
     free(dataBuku);
     free(dataUser);
     free(dataPinjam);
 
+    // mengatur pointer dataBuku, dataUser, dan dataPinjam menjadi NULL, supaya tidak menyimpan alamat lama yang sudah tidak boleh digunakan.
     dataBuku = NULL;
     dataUser = NULL;
     dataPinjam = NULL;

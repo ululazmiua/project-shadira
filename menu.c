@@ -11,8 +11,8 @@
 static const char *NAMA_ALGORITMA[] = {"", "Bubble Sort", "Selection Sort", "Insertion Sort"};
 static const char *NAMA_KRITERIA[] = {"", "ID Buku", "Judul", "Tahun Terbit", "Jumlah Halaman", "Stok"};
 
-/* ---------- input ---------- */
 
+// input
 static void bacaBaris(const char *label, char *hasil, int ukuran)
 {
     int panjang, c;
@@ -26,7 +26,7 @@ static void bacaBaris(const char *label, char *hasil, int ukuran)
         exit(0);
     }
 
-    panjang = strlen(hasil);
+    panjang = strlen(hasil); // menghitung panjang string/teks
     if (panjang > 0 && hasil[panjang - 1] == '\n')
     {
         hasil[panjang - 1] = '\0';
@@ -98,8 +98,7 @@ static void gantiPetik(char *teks)
     }
 }
 
-/* ---------- login ---------- */
-
+/*login*/
 User *menuLogin(void)
 {
     char username[32], password[32];
@@ -129,8 +128,7 @@ User *menuLogin(void)
     }
 }
 
-/* ---------- katalog ---------- */
-
+/*katalog */
 static void pilihPengurutan(int *kriteria, int *arah, int *algoritma)
 {
     printf("\nAlgoritma pengurutan:\n");
