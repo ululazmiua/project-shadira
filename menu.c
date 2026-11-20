@@ -20,23 +20,17 @@ static void bacaBaris(const char *label, char *hasil, int ukuran)
     printf("%s", label);
     if (fgets(hasil, ukuran, stdin) == NULL)
     {
-        /* input habis (misal Ctrl+D), keluar dengan rapi */
+        /* input habis, keluar dengan rapi */
         printf("\n");
         bebaskanSemuaData();
-        exit(0);
+        exit(0); // menghentikan program secara normal
     }
 
     panjang = strlen(hasil); // menghitung panjang string/teks
+    // Mengganti karakter Enter dengan karakter akhir string.
     if (panjang > 0 && hasil[panjang - 1] == '\n')
     {
         hasil[panjang - 1] = '\0';
-    }
-    else
-    {
-        /* input terlalu panjang, buang sisanya */
-        while ((c = getchar()) != '\n' && c != EOF)
-        {
-        }
     }
 }
 
