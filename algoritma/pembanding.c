@@ -28,6 +28,9 @@ static int bandingkan(const Buku *a, const Buku *b, int kriteria) {
             return a->page_count - b->page_count;
         case URUT_STOK:
             return a->stok - b->stok;
+
+        // jika a - b hasilnya negatif, maka a lebih kecil dari b, artinya tidak perlu ditukar
+        // jika a - b hasilnya positif, maka a lebih besar dari b, artinya perlu ditukar
     }
     return 0;
 }
