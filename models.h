@@ -6,9 +6,10 @@
 #define FILE_USER "data/User.txt"
 #define FILE_PINJAM "data/Peminjaman.txt"
 
+// Stok default jika baris buku di file tidak punya kolom stok
 #define STOK_AWAL 5
 
-typedef struct {
+    typedef struct {
     char ocaid[64];
     char title[256];
     char author[256];

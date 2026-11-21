@@ -1,0 +1,15 @@
+=====================================================================================================================================
+Alur utama program
+=====================================================================================================================================
+
+main.c ──► muatSemuaData()  (models.c: baca file .txt → simpan di memori/array)
+   │
+   └─► loop: menuLogin() → jalankanMenu()   (menu.c: tampilan & input user)
+                              │
+                              └─► buku.c / auth.c  (logika: pinjam, tambah, login, dst)
+                                        │
+                                        └─► simpanBuku()/simpanPinjam()  (models.c: tulis balik ke file)
+   └─► bebaskanSemuaData()  (models.c: free memori)
+
+
+=====================================================================================================================================

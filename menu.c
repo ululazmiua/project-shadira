@@ -15,7 +15,7 @@ static const char *NAMA_KRITERIA[] = {"", "ID Buku", "Judul", "Tahun Terbit", "J
 // input
 static void bacaBaris(const char *label, char *hasil, int ukuran)
 {
-    int panjang, c;
+    int panjang;
 
     printf("%s", label);
     if (fgets(hasil, ukuran, stdin) == NULL)
@@ -34,6 +34,7 @@ static void bacaBaris(const char *label, char *hasil, int ukuran)
     }
 }
 
+// baca inputan yang wajib, dimana jika tidak diisi itu bakalan muncul teks peringatan tigak boleh kosong
 static void bacaTeksWajib(const char *label, char *hasil, int ukuran)
 {
     do
@@ -92,7 +93,7 @@ static void gantiPetik(char *teks)
     }
 }
 
-/*login*/
+// login, mengembalikan pointer ke user yang berhasil login
 User *menuLogin(void)
 {
     char username[32], password[32];
@@ -364,8 +365,9 @@ static void menuAdmin(User *user)
     } while (pilihan != 0);
 }
 
-/* ---------- fitur user ---------- */
 
+
+// cuman ada di user bukan admin
 static void menuPinjam(User *user)
 {
     char id[64];

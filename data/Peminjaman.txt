@@ -1,2 +1,3 @@
 id_peminjaman username ocaid tanggal_pinjam status
 1 shadira principlesofhuma00huntrich 20-11-2026 KEMBALI
+2 shadira koreamongolinvas00hent 20-11-2026 KEMBALI

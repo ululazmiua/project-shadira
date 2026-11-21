@@ -20,7 +20,7 @@ Return 0 jika tidak ada kata.
 static int ambilKata(char *teks, int *pos, char *hasil, int maks)
 {
     int i = 0;
-
+ 
     // Lewati spasi dan tab
     while (teks[*pos] == ' ' || teks[*pos] == '\t')
     {
@@ -28,7 +28,7 @@ static int ambilKata(char *teks, int *pos, char *hasil, int maks)
     }
 
     // Periksa apakah teks sudah habis
-    if (teks[*pos] == '\0' || teks[*pos] == '\n' || teks[*pos] == '\r')
+    if (teks[*pos] == '\0' || teks[*pos] == '\n')
     {
         return 0;
     }
@@ -36,6 +36,7 @@ static int ambilKata(char *teks, int *pos, char *hasil, int maks)
     // Periksa apakah kata menggunakan tanda petik
     if (teks[*pos] == '"')
     {
+        // untuk melewati tanda "
         (*pos)++;
 
         // Ambil teks sampai menemukan tanda petik penutup
@@ -45,6 +46,7 @@ static int ambilKata(char *teks, int *pos, char *hasil, int maks)
 
             if (i < maks - 1)
             {
+                // buku.ocaid[32] w w _ _ _
                 hasil[i++] = teks[*pos];
             }
 
@@ -57,6 +59,7 @@ static int ambilKata(char *teks, int *pos, char *hasil, int maks)
             (*pos)++;
         }
     }
+    // ini untuk membaca data yang bukan diapit sama tanda kutip "
     else
     {
 
@@ -66,8 +69,10 @@ static int ambilKata(char *teks, int *pos, char *hasil, int maks)
                teks[*pos] != '\r')
         {
 
-            if (i < maks - 1)
+            if (i < maks - 1)  
             {
+                // w w _ 
+                // 0 1 2
                 hasil[i++] = teks[*pos];
             }
 
@@ -76,7 +81,7 @@ static int ambilKata(char *teks, int *pos, char *hasil, int maks)
     }
 
     // Akhiri string
-    hasil[i] = '\0';
+    hasil[i] = '\0'; 
 
     return 1;
 }
