@@ -117,8 +117,10 @@ User *menuLogin(void)
         user = login(username, password);
         if (user != NULL)
         {
+            // kalau ada
             return user;
         }
+        // kalau gak ada
         printf("Username atau password salah, coba lagi.\n");
     }
 }

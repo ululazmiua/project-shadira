@@ -27,4 +27,4 @@ int main(void)
     return 0;
 }
 
-// gcc -Wall -Wextra -std=c99 -o perpustakaan main.c models.c auth.c buku.c menu.c algoritma/*.c
+// gcc -Wall -Wextra -o perpustakaan main.c models.c auth.c buku.c menu.c algoritma/*.c
