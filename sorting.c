@@ -7,7 +7,7 @@ int main()
 
     printf("Sebelum: %d %d\n", nilai[0], nilai[1]);
 
-    sementara = nilai[0];
+    sementara = nilai[0]; // simpan
     nilai[0] = nilai[1];
     nilai[1] = sementara;
 

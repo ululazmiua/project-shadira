@@ -5,8 +5,6 @@
 #include <time.h>
 #include "buku.h"
 #include "algoritma/bubble_sort.h"
-#include "algoritma/selection_sort.h"
-#include "algoritma/insertion_sort.h"
 
 /* ---------- bantuan ---------- */
 
@@ -142,10 +140,6 @@ Buku **siapkanKatalog(int hanyaTersedia, int *jumlah, int kriteria, int arah, in
 
     if (algoritma == 1) {
         bubbleSort(daftar, n, kriteria, arah);
-    } else if (algoritma == 2) {
-        selectionSort(daftar, n, kriteria, arah);
-    } else {
-        insertionSort(daftar, n, kriteria, arah);
     }
 
     *jumlah = n;
